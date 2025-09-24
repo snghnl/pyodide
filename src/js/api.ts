@@ -8,7 +8,19 @@ import { version } from "./version";
 import { setStdin, setStdout, setStderr } from "./streams";
 import { scheduleCallback } from "./scheduler";
 import { TypedArray, PackageData, FSType, Lockfile } from "./types";
-import { IN_NODE, detectEnvironment } from "./environments";
+import {
+  IN_NODE,
+  IN_NODE_COMMONJS,
+  IN_NODE_ESM,
+  IN_BUN,
+  IN_DENO,
+  IN_BROWSER,
+  IN_BROWSER_MAIN_THREAD,
+  IN_BROWSER_WEB_WORKER,
+  IN_SAFARI,
+  IN_SHELL,
+  detectEnvironment,
+} from "./environments";
 // @ts-ignore
 import LiteralMap from "./common/literal-map";
 import abortSignalAny from "./common/abortSignalAny";
@@ -131,6 +143,27 @@ export class PyodideAPI_ {
   static setStdout = setStdout;
   /** @hidden */
   static setStderr = setStderr;
+
+  /** @hidden */
+  static IN_NODE = IN_NODE;
+  /** @hidden */
+  static IN_NODE_COMMONJS = IN_NODE_COMMONJS;
+  /** @hidden */
+  static IN_NODE_ESM = IN_NODE_ESM;
+  /** @hidden */
+  static IN_BUN = IN_BUN;
+  /** @hidden */
+  static IN_DENO = IN_DENO;
+  /** @hidden */
+  static IN_BROWSER = IN_BROWSER;
+  /** @hidden */
+  static IN_BROWSER_MAIN_THREAD = IN_BROWSER_MAIN_THREAD;
+  /** @hidden */
+  static IN_BROWSER_WEB_WORKER = IN_BROWSER_WEB_WORKER;
+  /** @hidden */
+  static IN_SAFARI = IN_SAFARI;
+  /** @hidden */
+  static IN_SHELL = IN_SHELL;
 
   /**
    *
